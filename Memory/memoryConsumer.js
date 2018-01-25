@@ -1,6 +1,8 @@
 'use strict';
 
 let multiplier = 1;
+let foo = (x) => {work(x);};
+
 
 function init(){
     const addPicButton = document.getElementById("useMemoryButton");
@@ -22,5 +24,12 @@ function AddAnotherPicture() {
         //place a performance marker every 10 children
         performance.mark(`${10 * multiplier} mch (more children here)`);
         multiplier++;
+        foo(multiplier);
     }
+
+    picturesDiv.style.border = ".2em solid red";
+}
+
+function work(i) {
+    console.log(i);
 }
